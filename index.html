@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TTT</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<style>
+body {
+  padding-top: 50px;
+}   
+.block {
+  height: 150px;
+  padding-top: 1px;  
+  padding: 5px;
+}  
+.block2 {
+  min-height: 120px;
+  padding-top: 15px; 
+} 
+.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;  
+}
+.results{
+	min-height: 5em;
+}
+.pic{
+	margin-right: 20px;
+	width: 80px;
+	height: 50px;
+}
+.pic img {
+	border-radius: 50px;
+   	height: 100%;
+   	width: 100%;
+}
+.panel-heading{
+	padding: 0;
+	padding-top: 5px;
+}
+.panel-body{
+	padding: 2px;
+	padding-top: 5px;
+}
+</style>
+
+</head>
+
+<body>
+<section>
+    <div class="container col-lg-12 block">
+        
+        <div class="row col-xs-8 block2  center">
+            
+            <div align="center" >
+                <label class="control-label col-sm-3">Enter Total Count</label>
+                <div class="col-sm-8 col-xs-12">
+                    <input type="text" name="query" placeholder="Enter Value"  class="form-control" id="search"/>
+                </div>
+       
+                <div class="col-sm-offset-2 col-sm-8">  
+                	<br>
+                    <input type="submit" name="searchBtn" id="searchBtn" value="Search" class="btn btn-default"   />
+                </div>  
+      		</div>
+        </div>
+    </div>
+</section>
+<section>
+	<div class="container col-lg-12">
+		<div class="row col-xs-8 results center" id="output">
+
+		</div>
+	</div>
+
+</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script>
+
+	$(document).ready(function(){
+		alert("hello");
+		// var data=document.getElementById("search").value;
+	    var xmlhttp = new XMLHttpRequest();
+	    xmlhttp.onreadystatechange = function() {
+
+	   		if (this.readyState == 4 && this.status == 200) {
+	   			alert("Success");
+	   			var a=this.responseText;
+	   			alert(a);
+	   		}
+	    }
+	    	xmlhttp.open("POST", "scan.php", true);
+	        xmlhttp.send();
+	});
+	
+		$("#searchBtn").click(function(){
+			var xmlhttp = new XMLHttpRequest();
+			var data=document.getElementById("search").value;
+		    xmlhttp.onreadystatechange = function() {
+
+		   		if (this.readyState == 4 && this.status == 200) {
+		   			alert("Success");
+		   			var a=this.responseText;
+		   			alert(a);
+		   		}
+		    }
+	    	xmlhttp.open("POST", "show.php?q="+data, true);
+	        xmlhttp.send();
+	});
+
+		}
+	</script>
+    
+
+</body>
+</html>
