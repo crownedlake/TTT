@@ -10,4 +10,4 @@ Frameworks/Libraries used
 For front end i have used bootstrap with jquery in some places
 For back end core php has been used
 
-![qw](https://user-images.githubusercontent.com/16207718/38157986-4945149e-34aa-11e8-951d-09a34165426c.png)
+![j](https://user-images.githubusercontent.com/16207718/38158021-a3c20422-34aa-11e8-8286-7f16ccba3c20.png)
